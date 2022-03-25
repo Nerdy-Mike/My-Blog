@@ -1,12 +1,13 @@
 const siteMetadata = {
   title: 'Mike Le`s Blog',
   author: 'Mike Le',
+  
   headerTitle: 'Michael Le',
   description: 'A blog created with Next.js and Tailwind.css',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://my-blog-nerdy-mike.vercel.app/',
-  siteRepo: '',
+  siteUrl: 'https://my-blog-nerdy-mike.vercel.app',
+  siteRepo: 'https://github.com/Nerdy-Mike/My-Blog',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
