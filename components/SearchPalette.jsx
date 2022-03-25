@@ -16,7 +16,7 @@ const SearchPalette = ({ posts, initialDisplayPosts = [] }) => {
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className="pr-4">
+      <button onClick={() => setIsOpen(true)} className="pr-4" aria-label="Search Pallete">
         <div className="flex flex-row">
           <svg
             className=" h-6 w-6 text-gray-600 dark:text-gray-300"

@@ -14,7 +14,9 @@ const SideBarLeft = () => {
               <img
                 className=" mx-auto w-24 rounded-full "
                 src="https://avatars.githubusercontent.com/u/67946056?v=4"
-                alt=""
+                alt="My Avatar"
+                width={100}
+                height={100}
               />
               <div className=" mx-auto flex flex-col">
                 <div className="text-md mt-2 text-center font-medium">Welcome</div>
