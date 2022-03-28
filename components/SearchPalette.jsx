@@ -1,4 +1,4 @@
-import React, { useState, useRef, Fragment } from 'react'
+import React, { useState, useRef, Fragment, useEffect } from 'react'
 import { Dialog, Combobox, Transition } from '@headlessui/react'
 import Link from '@/components/Link'
 
@@ -10,6 +10,7 @@ const SearchPalette = ({ posts, initialDisplayPosts = [] }) => {
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
+  //TODO: refactor searchValue to use useRef
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
@@ -77,6 +78,7 @@ const SearchPalette = ({ posts, initialDisplayPosts = [] }) => {
                 aria-label="Search articles"
                 type="text"
                 onChange={(e) => setSearchValue(e.target.value)}
+                autoFocus
                 placeholder="Search articles ..."
                 className="block h-12 w-full rounded-lg border-none border-gray-300 bg-transparent px-4 py-2  text-gray-900 focus:ring-transparent dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100 "
               />
@@ -85,7 +87,7 @@ const SearchPalette = ({ posts, initialDisplayPosts = [] }) => {
                   searchValue.length > 0 ? '' : 'hidden'
                 }`}
               >
-                {displayPosts.length > 1 ? (
+                {displayPosts.length > 0 ? (
                   displayPosts.map((frontMatter, i) => {
                     const { slug, date, title, summary, tags } = frontMatter
                     return (
