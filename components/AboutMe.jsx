@@ -48,8 +48,8 @@ const AboutMe = () => {
                 </div>
                 <CloseButton closeModal={closeModal} />
               </div>
-              <div className="-mt-12 mb-5 flex flex-row justify-start px-5">
-                <div className="mt-16 pl-4 ">
+              <div className="-mt-12 mb-5 flex flex-row justify-start">
+                <div className="mt-16  w-full text-center ">
                   <h2 className="text-3xl font-bold text-primary-600 dark:text-primary-400">
                     Michael Le
                   </h2>
@@ -59,11 +59,11 @@ const AboutMe = () => {
               <div className="">
                 <div className="mb-4 px-7">
                   <p className="mt-2 text-center text-gray-600 dark:text-gray-300">
-                    Oh hey, I'm Michael, a junior software engineer based in Sai Gon.
-                    <p>This is where I write about my thinkings and learnings.</p>
+                    Oh hey, I'm Michael, a junior software engineer based in Adelaide.
+                    <p>This little corner is where I write about my experiences and thinkings.</p>
                   </p>
 
-                  <div className="mt-4 flex flex-col flex-wrap justify-center gap-2 sm:gap-4">
+                  <div className="mt-2 flex flex-col flex-wrap justify-center gap-2 sm:gap-4">
                     <a
                       className=" mx-auto mt-8 max-w-min cursor-pointer justify-center rounded-lg bg-primary-600 px-4 py-2 text-gray-100 hover:bg-primary-800 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-gray-200"
                       href="mailto:mike.thenerdy@gmail.com"

@@ -1,7 +1,7 @@
 const siteMetadata = {
-  title: 'Mike Le`s Blog',
-  author: 'Mike Le',
-  
+  title: `Michael Le's Blog`,
+  author: 'Michael Le',
+
   headerTitle: 'Michael Le',
   description: 'A blog created with Next.js and Tailwind.css',
   language: 'en-us',
@@ -12,11 +12,9 @@ const siteMetadata = {
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'mike.thenerdy@gmail.com',
-  github: 'https://github.com',
-  twitter: 'https://twitter.com/Twitter',
+  github: 'https://github.com/Nerdy-Mike',
   facebook: 'https://facebook.com',
-  youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
+  linkedin: 'https://www.linkedin.com/in/michael-le-0b2a44232/',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
