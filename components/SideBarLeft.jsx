@@ -2,7 +2,8 @@
 import React from 'react'
 import Link from 'next/link'
 import AboutMe from './AboutMe'
-
+import MyImage from '../data/me2.jpg'
+import Image from 'next/image'
 const SideBarLeft = () => {
   return (
     <div className="col-span-2 hidden min-h-screen md:block">
@@ -11,13 +12,14 @@ const SideBarLeft = () => {
           {/* Short Bio */}
           <div className="w-full items-center justify-center font-sans ">
             <div className="card  flex w-full rounded-lg border-none px-4 pb-4 shadow-xl dark:shadow-lg dark:shadow-gray-800">
-              <img
-                className=" mx-auto w-24 rounded-full "
-                src="https://avatars.githubusercontent.com/u/67946056?v=4"
+              <Image
+                className=" mx-auto w-24 rounded-full"
+                src="https://avatars.githubusercontent.com/u/82449028?v=4"
                 alt="My Avatar"
                 width={100}
                 height={100}
               />
+
               <div className=" mx-auto flex flex-col">
                 <div className="text-md mt-2 text-center font-medium">Welcome</div>
                 <div className=" text-center text-sm font-light">
@@ -30,6 +32,7 @@ const SideBarLeft = () => {
         </div>
         <nav className="pt-6">
           <div className="text-primary-500 dark:text-primary-400">Catagories</div>
+          {/* AI/ML */}
           <a
             className="focus:shadow-outline mt-2 block rounded-lg bg-gray-200 px-4 py-2 text-base font-semibold text-gray-900 hover:bg-gray-300 hover:text-gray-900 focus:bg-gray-200 focus:text-gray-900 focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:bg-gray-600 dark:focus:text-white"
             href={`/tags/ai-ml`}
@@ -152,6 +155,7 @@ const SideBarLeft = () => {
               <span className="ml-2 text-base">&nbsp;&nbsp;&nbsp;AI/ML</span>
             </div>
           </a>
+          {/* Web dev */}
           <a
             className="focus:shadow-outline mt-2 block rounded-lg bg-gray-200 px-4 py-2 text-base font-semibold text-gray-900 hover:bg-gray-300 hover:text-gray-900 focus:bg-gray-200 focus:text-gray-900 focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:bg-gray-600 dark:focus:text-white"
             href={`/tags/webdev`}
@@ -178,6 +182,7 @@ const SideBarLeft = () => {
               <span className="ml-2  text-base">&nbsp;&nbsp;&nbsp;Web dev</span>
             </div>
           </a>
+          {/* Math */}
           <a
             className="focus:shadow-outline mt-2 block rounded-lg bg-gray-200 px-4 py-2 text-base font-semibold text-gray-900 hover:bg-gray-300 hover:text-gray-900 focus:bg-gray-200 focus:text-gray-900 focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:bg-gray-600 dark:focus:text-white"
             href={`/tags/math`}
@@ -224,6 +229,7 @@ const SideBarLeft = () => {
               <span className="ml-2  text-base">&nbsp;&nbsp;&nbsp;Math</span>
             </div>
           </a>
+          {/* Economics */}
           <a
             className="focus:shadow-outline mt-2 block rounded-lg bg-gray-200 px-4 py-2 text-base font-semibold text-gray-900 hover:bg-gray-300 hover:text-gray-900 focus:bg-gray-200 focus:text-gray-900 focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:bg-gray-600 dark:focus:text-white"
             href={`/tags/economics`}
@@ -238,6 +244,7 @@ const SideBarLeft = () => {
               <span className="ml-2  text-base">&nbsp;&nbsp;&nbsp;Economics</span>
             </div>
           </a>
+          {/* Psychology */}
           <a
             className="focus:shadow-outline mt-2 block rounded-lg bg-gray-200 px-4 py-2 text-base font-semibold text-gray-900 hover:bg-gray-300 hover:text-gray-900 focus:bg-gray-200 focus:text-gray-900 focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:bg-gray-600 dark:focus:text-white"
             href={`/tags/philosophy`}
@@ -250,9 +257,10 @@ const SideBarLeft = () => {
                 height={20}
               />
 
-              <span className="ml-2  text-base">&nbsp;&nbsp;&nbsp;Philosophy</span>
+              <span className="ml-2  text-base">&nbsp;&nbsp;&nbsp;Psychology</span>
             </div>
           </a>
+          {/* Random */}
           <a
             className="focus:shadow-outline mt-2 block rounded-lg bg-gray-200 px-4 py-2 text-base font-semibold text-gray-900 hover:bg-gray-300 hover:text-gray-900 focus:bg-gray-200 focus:text-gray-900 focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:bg-gray-600 dark:focus:text-white"
             href={`/tags/random`}

@@ -31,7 +31,6 @@ export default function Home({ posts }) {
       }),
     ])
   }
-
   const sortLatest = (posts) => {
     if (new Date(posts[0].date) - new Date(posts[1].date) < 0) {
       setIsWarningOpen(true)

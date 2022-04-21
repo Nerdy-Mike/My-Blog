@@ -75,7 +75,7 @@ const SearchPalette = ({ posts, initialDisplayPosts = [] }) => {
                 </svg>
               </button>
               <Combobox.Input
-                aria-label="Search articles"
+                aria-label="nSearch articles"
                 type="text"
                 onChange={(e) => setSearchValue(e.target.value)}
                 autoFocus
@@ -113,7 +113,7 @@ const SearchPalette = ({ posts, initialDisplayPosts = [] }) => {
                   <div className="flex flex-col justify-center ">
                     <div className="flex justify-center text-lg font-medium">No matches 👻</div>
                     <div className="text-md flex justify-center text-gray-500">
-                      Please try different search terms
+                      Try different search terms
                     </div>
                   </div>
                 )}

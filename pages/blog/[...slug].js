@@ -39,10 +39,10 @@ export async function getStaticProps({ params }) {
     fs.writeFileSync('./public/feed.xml', rss)
   }
 
-  return { props: { post, authorDetails, prev, next } }
+  return { props: { allPosts, post, authorDetails, prev, next } }
 }
 
-export default function Blog({ post, authorDetails, prev, next }) {
+export default function Blog({ allPosts, post, authorDetails, prev, next }) {
   const { mdxSource, toc, frontMatter } = post
   const router = useRouter()
 
@@ -72,7 +72,7 @@ export default function Blog({ post, authorDetails, prev, next }) {
           </div>
         </button>
         <div className="pt-2 pr-4">
-          <SearchPalette posts={[]} />
+          <SearchPalette posts={allPosts} />
         </div>
       </div>
       <div className="px-4 pt-8">

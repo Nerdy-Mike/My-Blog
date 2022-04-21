@@ -4,7 +4,7 @@ const CloseButton = ({ closeModal }) => {
   return (
     <button
       type="button"
-      className="focus:shadow-outline absolute top-0 right-0 z-10 m-2 inline-flex items-center justify-center rounded-md bg-transparent p-2 text-gray-100  hover:text-gray-600  focus:outline-none dark:text-gray-800 hover:dark:text-gray-100"
+      className="focus:shadow-outline absolute top-0 right-0 z-10 m-2 inline-flex items-center justify-center rounded-md bg-transparent p-2 text-gray-100  hover:text-gray-600  focus:outline-none dark:text-gray-400 hover:dark:text-gray-100"
       onClick={() => {
         closeModal()
       }}
