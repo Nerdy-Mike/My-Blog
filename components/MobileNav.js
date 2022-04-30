@@ -69,7 +69,7 @@ const MobileNav = () => {
                 <div className=" text-center text-sm font-light">
                   <p>Cognito ergo sum</p>
                 </div>
-                <AboutMe CoverImage={City}/>
+                <AboutMe CoverImage={City} />
               </div>
             </div>
           </div>
