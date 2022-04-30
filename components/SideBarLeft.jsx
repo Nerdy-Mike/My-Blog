@@ -2,8 +2,9 @@
 import React from 'react'
 import Link from 'next/link'
 import AboutMe from './AboutMe'
-import MyImage from '../data/me2.jpg'
+import City from '@/data/city.jpg'
 import Image from 'next/image'
+
 const SideBarLeft = () => {
   return (
     <div className="col-span-2 hidden min-h-screen md:block">
@@ -25,7 +26,7 @@ const SideBarLeft = () => {
                 <div className=" text-center text-sm font-light">
                   <p>Cognito ergo sum</p>
                 </div>
-                <AboutMe />
+                <AboutMe CoverImage={City} />
               </div>
             </div>
           </div>

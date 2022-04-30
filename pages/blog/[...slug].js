@@ -51,7 +51,9 @@ export default function Blog({ allPosts, post, authorDetails, prev, next }) {
       <div className="flex flex-row justify-between pb-1">
         <button
           className="text-md pt-2 tracking-tight text-gray-600 dark:text-gray-100 sm:text-lg"
-          onClick={() => router.back()}
+          onClick={() => {
+            router.back()
+          }}
         >
           <div className="justity-center flex flex-row items-center">
             <svg

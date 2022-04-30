@@ -4,6 +4,7 @@ import Link from './Link'
 import headerNavLinks from '@/data/headerNavLinks'
 import Image from 'next/image'
 import AboutMe from './AboutMe'
+import City from '@/data/city.jpg'
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
@@ -60,7 +61,7 @@ const MobileNav = () => {
             <div className="card  flex w-full rounded-lg border-none px-4 pb-4 shadow-xl dark:shadow-lg dark:shadow-gray-800">
               <img
                 className=" mx-auto w-24 rounded-full "
-                src="https://avatars.githubusercontent.com/u/67946056?v=4"
+                src="https://avatars.githubusercontent.com/u/82449028?v=4"
                 alt=""
               />
               <div className=" mx-auto flex flex-col">
@@ -68,7 +69,7 @@ const MobileNav = () => {
                 <div className=" text-center text-sm font-light">
                   <p>Cognito ergo sum</p>
                 </div>
-                <AboutMe />
+                <AboutMe CoverImage={City}/>
               </div>
             </div>
           </div>

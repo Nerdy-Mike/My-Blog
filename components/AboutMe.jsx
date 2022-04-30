@@ -1,24 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState, useRef, Fragment } from 'react'
+import React, { useState, useRef, Fragment, useEffect } from 'react'
 import { Dialog, Combobox, Transition } from '@headlessui/react'
 import CloseButton from './buttons/CloseButton'
 import City from '@/data/city.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
+import LoaderImage from '@/components/skeletonLoader/loaderImage'
 
-const AboutMe = () => {
+const AboutMe = ({ CoverImage }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [searchValue, setSearchValue] = useState('')
+  const [loading, setLoading] = useState(true)
 
   const closeModal = () => {
     setIsOpen(false)
   }
 
+  useEffect(() => {
+    if (CoverImage) {
+      setTimeout(() => {
+        setLoading(false)
+      }, 1000)
+    }
+  }, [CoverImage])
   return (
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="mx-3 mt-3 rounded-lg bg-cyan-300  py-1 dark:bg-cyan-600"
+        className="mx-2 mt-3 rounded-md bg-cyan-300  py-1 dark:bg-primary-600"
       >
         About me
       </button>
@@ -32,19 +41,18 @@ const AboutMe = () => {
           <div className=" flex flex-wrap items-center justify-center ">
             <div className="easy-in-out container max-w-3xl transform rounded-lg bg-white shadow-lg duration-200 dark:bg-gray-800">
               <div className="h-48 overflow-hidden rounded-lg sm:h-64 ">
-                {/* <img
-                  className="w-full rounded-t"
-                  src="https://images.unsplash.com/photo-1638803040283-7a5ffd48dad5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                  alt="Photo by aldi sigun on Unsplash"
-                /> */}
                 <div style={{ width: '100%', height: '100%', position: 'relative' }}>
-                  <Image
-                    alt="City image"
-                    src={City}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rouned-md grayscale"
-                  />
+                  {loading ? (
+                    <LoaderImage />
+                  ) : (
+                    <Image
+                      alt="City image"
+                      src={CoverImage}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rouned-md grayscale"
+                    />
+                  )}
                 </div>
                 <CloseButton closeModal={closeModal} />
               </div>
@@ -59,8 +67,8 @@ const AboutMe = () => {
               <div className="">
                 <div className="mb-4 px-7">
                   <p className="mt-2 text-center text-gray-600 dark:text-gray-300">
-                    Oh hey, I'm Michael, a junior software engineer based in Adelaide.
-                    <p>This little corner is where I write about my experiences and thinkings.</p>
+                    Oh hey, I'm Michael, a junior software engineer based in Adelaide. This little
+                    corner is where I write about my experiences and thinkings.
                   </p>
 
                   <div className="mt-2 flex flex-col flex-wrap justify-center gap-2 sm:gap-4">

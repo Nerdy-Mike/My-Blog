@@ -1,0 +1,68 @@
+---
+title: Merging vs. Rebasing
+date: '2022-03-27'
+tags: ['web dev']
+draft: false
+summary: 'In this article we explore the difference between merging and rebasing.'
+authors: ['sparrowhawk']
+layout: PostSimple
+---
+
+
+`git rebase` vs `git merge`
+
+<aside>
+🗽 Never use `git rebase`  is to never use it on public branches.
+
+</aside>
+
+>_ The first thing to understand is that both solve the same problem, which is to integrate changes form one branch into another branch - they just do it in very different ways.
+
+Consider what happens when you start working on a new feature in a dedicated branch, then another team member updates the `main` branch with new commits. This results in a forked history, which should be familiar to anyone who has used Git as a collaboration tool.
+
+![Untitled](/static/images/mergingvsbasing/Untitled.png)
+
+Now, let’s say that the new commits in `main` are relevant to the feature that you are working on. To get the new commits into your `feature` branch, you can either **merging** or **rebasing**.
+
+## The Merge Option
+
+The easiest option is to merge the main branch into the feature branch using something like:
+
+```bash
+git checkout feature
+git merge main
+```
+
+>_ This creates a new ‘merge commit’ in the feature branch that ties together the histories of both branches, giving you a branch structure that looks like this:
+
+![Untitled](/static/images/mergingvsbasing/Untitled1.png)
+
+
+Merging is nice because it’s a *non-destructive* operation. The existing branches are not changed in any way. This avoids all of the potential pitfalls of rebasing (discussed below).
+
+On the other hand, this also means that the `feature` branch will have an extraneous merge commit every time you need to incorporate upstream changes. If `main` is very active, this can pollute your feature branch’s history quite a bit. While it’s possible to mitigate this issue with advanced `git log` options, it can make it hard for other developers to understand the history of the project.
+
+# The Rebase Option
+
+As an alternative to merging, you can rebase the `feature` branch onto `main` branch using the following commands:
+
+```bash
+git checkout feature
+git rebase main
+```
+
+This moves the entire `feature`branch to begin on the tip of the `main` branch, effectively incorporating all of the new commits in `main`. But, instead of using a merge commit, rebasing ***re-writes***  the project history by creating brand new commits for each commit in the original branch.
+
+![Untitled](/static/images/mergingvsbasing/Untitled2.png)
+
+
+The major benefit of rebasing is that you get a much cleaner project history. First, it eliminates the unnecessary merge commits required by `git merge`. Second, as you can see in the above diagram, rebasing also results in a perfectly linear project history—you can follow the tip of `feature` all the way to the beginning of the project without any forks. This makes it easier to navigate your project with commands like `git log`, `git bisect`, and `gitk`.
+
+But, there are two trade-offs for this pristine commit history: safety and traceability. If you don’t follow the [Golden Rule of Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing), re-writing project history can be potentially catastrophic for your collaboration workflow. And, less importantly, rebasing loses the context provided by a merge commit—you can’t see when upstream changes were incorporated into the feature.
+
+![Untitled](/static/images/mergingvsbasing/Untitled3.png)
+
+
+The rebase moves all of the commits in `main` onto the tip of `feature`. The problem is that this only happened in *your* repository. All of the other developers are still working with the original `main`. Since rebasing results in brand new commits, Git will think that your `main` branch’s history has diverged from everybody else’s.
+
+The only way to synchronize the two `main` branches is to merge them back together, resulting in an extra merge commit *and* two sets of commits that contain the same changes (the original ones, and the ones from your rebased branch). Needless to say, this is a very confusing situation.
