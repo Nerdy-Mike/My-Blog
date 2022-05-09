@@ -12,7 +12,7 @@ import SideBarLeft from './SideBarLeft'
 const LayoutWrapper = ({ children }) => {
   return (
     <div>
-      <header className="sticky top-0 z-50 mx-auto flex w-full justify-center py-2 px-6 backdrop-blur-lg backdrop-filter md:px-16">
+      <header className="sticky top-0 z-50 mx-auto flex w-screen justify-center py-2 px-6 backdrop-blur-lg backdrop-filter md:px-16">
         <div className="flex w-full max-w-screen-2xl justify-between ">
           <Link href="/" aria-label={siteMetadata.headerTitle}>
             <div className="flex items-center justify-between">
