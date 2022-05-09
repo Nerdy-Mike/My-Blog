@@ -11,7 +11,7 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'mike.thenerdy@gmail.com',
+  email: 'michaelle.dev@gmail.com',
   github: 'https://github.com/Nerdy-Mike',
   facebook: 'https://facebook.com',
   linkedin: 'https://www.linkedin.com/in/michael-le-0b2a44232/',

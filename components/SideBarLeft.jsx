@@ -14,7 +14,7 @@ const SideBarLeft = () => {
           <div className="w-full items-center justify-center font-sans ">
             <div className="card  flex w-full rounded-lg border-none px-4 pb-4 shadow-xl dark:shadow-lg dark:shadow-gray-800">
               <Image
-                className=" mx-auto w-24 rounded-full"
+                className=" mx-auto rounded-full object-cover"
                 src="https://avatars.githubusercontent.com/u/82449028?v=4"
                 alt="My Avatar"
                 width={100}

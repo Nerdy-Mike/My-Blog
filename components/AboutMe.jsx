@@ -74,9 +74,9 @@ const AboutMe = ({ CoverImage }) => {
                   <div className="mt-2 flex flex-col flex-wrap justify-center gap-2 sm:gap-4">
                     <a
                       className=" mx-auto mt-8 max-w-min cursor-pointer justify-center rounded-lg bg-primary-600 px-4 py-2 text-gray-100 hover:bg-primary-800 hover:text-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-gray-200"
-                      href="mailto:mike.thenerdy@gmail.com"
+                      href="mailto:michaelle.dev@gmail.com"
                     >
-                      mike.thenerdy@gmail.com
+                      michaelle.dev@gmail.com
                     </a>
                     <div className="flex items-center justify-center">
                       <Link passHref href="https://github.com/Nerdy-Mike">
