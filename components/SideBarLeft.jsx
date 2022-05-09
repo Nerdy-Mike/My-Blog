@@ -159,7 +159,7 @@ const SideBarLeft = () => {
           {/* Web dev */}
           <a
             className="focus:shadow-outline mt-2 block rounded-lg bg-gray-200 px-4 py-2 text-base font-semibold text-gray-900 hover:bg-gray-300 hover:text-gray-900 focus:bg-gray-200 focus:text-gray-900 focus:outline-none dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:bg-gray-600 dark:focus:text-white"
-            href={`/tags/webdev`}
+            href={`/tags/web-dev`}
           >
             <div className="flex items-center py-1">
               <svg
