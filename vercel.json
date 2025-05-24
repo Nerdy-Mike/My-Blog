@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "framework": "nextjs",
+  "functions": {
+    "api/**/*": {
+      "memory": 1024
+    }
+  },
+  "regions": ["sfo1"],
+  "nodeVersion": "18.x"
+} 
