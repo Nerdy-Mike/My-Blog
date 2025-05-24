@@ -1,4 +1,13 @@
-# 🤦‍♂️ I'm Building ChessMind Because I'm Tired of Paying $150/Year to Feel Stupid
+---
+title: 'The Chess Mind Project: Building Better Chess Analysis Tools'
+date: '2024-03-26'
+tags: ['chess', 'software-development', 'ai', 'technical']
+draft: false
+summary: 'Building an AI-powered chess analysis tool that provides meaningful insights at an affordable price'
+layout: PostSimple
+---
+
+# 🧠 The Chess Mind Project: Building Better Chess Analysis Tools
 
 **[TECHNICAL SERIES - POST 01]**
 
