@@ -1,12 +1,13 @@
-import React, { useState, useRef, Fragment, useEffect } from 'react'
-import { Dialog, Combobox, Transition } from '@headlessui/react'
 import Link from '@/components/Link'
+import { Combobox, Dialog, Transition } from '@headlessui/react'
+import { Fragment, useState } from 'react'
 
 const SearchPalette = ({ posts, initialDisplayPosts = [] }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((frontMatter) => {
-    const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
+    const tags = frontMatter.tags || []
+    const searchContent = `${frontMatter.title} ${frontMatter.summary} ${tags.join(' ')}`
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 

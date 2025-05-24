@@ -1,17 +1,17 @@
 import Link from '@/components/Link'
-import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
-import { useState } from 'react'
 import Pagination from '@/components/Pagination'
-import formatDate from '@/lib/utils/formatDate'
 import SearchPalette from '@/components/SearchPalette'
+import Tag from '@/components/Tag'
+import formatDate from '@/lib/utils/formatDate'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
   const router = useRouter()
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((frontMatter) => {
-    const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
+    const tags = frontMatter.tags || []
+    const searchContent = `${frontMatter.title} ${frontMatter.summary} ${tags.join(' ')}`
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
@@ -79,7 +79,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
         <div className="grid grid-cols-1 pt-2 md:grid-cols-2">
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
-            const { slug, date, title, summary, tags } = frontMatter
+            const { slug, date, title, summary, tags = [] } = frontMatter
             return (
               <div key={slug} className="">
                 <div className=" py-2 md:p-4 ">

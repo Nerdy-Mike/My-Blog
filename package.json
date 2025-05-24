@@ -3,12 +3,12 @@
   "version": "1.5.2",
   "private": true,
   "engines": {
-    "node": "18.x"
+    "node": ">=18.x"
   },
   "scripts": {
     "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
     "dev": "next dev",
-    "build": "next build",
+    "build": "node -v && echo 'Building with Node.js version above' && next build",
     "export": "next export",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",

@@ -1,13 +1,12 @@
-import { useState } from 'react'
 import Link from '@/components/Link'
+import SearchPalette from '@/components/SearchPalette'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
-import formatDate from '@/lib/utils/formatDate'
-import Pagination from '@/components/Pagination'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
-import SearchPalette from '@/components/SearchPalette'
 import Warning from '@/components/Warning'
+import siteMetadata from '@/data/siteMetadata'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
+import formatDate from '@/lib/utils/formatDate'
+import { useState } from 'react'
 
 export async function getStaticProps(context) {
   const posts = await getAllFilesFrontMatter('blog')
@@ -72,7 +71,7 @@ export default function Home({ posts }) {
         <div className="grid grid-cols-1 pt-2 md:grid-cols-2">
           {!posts.length && 'No posts found.'}
           {sortedPosts.map((frontMatter) => {
-            const { slug, date, title, summary, tags } = frontMatter
+            const { slug, date, title, summary, tags = [] } = frontMatter
             return (
               <div key={slug} className="">
                 <div className=" py-2 md:p-4 ">
