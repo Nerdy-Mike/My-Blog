@@ -1,4 +1,4 @@
----
+gst---
 title: 'Thoughts on Bitcoin'
 date: 2022-05-02T15:32:14Z
 lastmod: '2022-05-04'

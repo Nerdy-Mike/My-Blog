@@ -1,11 +1,11 @@
 ---
-title: 'An analysis of the role of lottery in a nation's economic'
+title: "An analysis of the role of lottery in a nation's economic"
 date: 2022-04-01T15:32:14Z
 lastmod: '2022-05-04'
 category: 'Economics'
 tags: ['probability', 'analysis', 'mathematics', 'intermediate']
 draft: false
-summary: 'An analysis of the role of lottery in a nation's economic'
+summary: "An analysis of the role of lottery in a nation's economic"
 layout: PostSimple
 ---
 

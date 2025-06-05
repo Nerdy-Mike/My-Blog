@@ -1,10 +1,10 @@
 ---
-title: 'The Chess Mind Project: Building Better Chess Analysis Tools'
+title: "The Chess Mind Project: Building Better Chess Analysis Tools"
 date: '2024-03-26'
 category: 'Projects'
 tags: ['ai-ml', 'chess-analysis', 'python', 'case-study', 'intermediate']
 draft: false
-summary: 'A Vietnamese dev with an ML obsession builds an AI-powered chess analysis tool because apparently my 1750 rating needs more than just cà phê sữa đá to improve'
+summary: "A Vietnamese dev with an ML obsession builds an AI-powered chess analysis tool because apparently my 1750 rating needs more than just cà phê sữa đá to improve"
 layout: PostSimple
 ---
 
