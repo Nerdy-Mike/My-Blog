@@ -1,7 +1,8 @@
 ---
 title: 'The Chess Mind Project: Building Better Chess Analysis Tools'
 date: '2024-03-26'
-tags: ['chess', 'software-development', 'ai', 'technical']
+category: 'Projects'
+tags: ['ai-ml', 'chess-analysis', 'python', 'case-study', 'intermediate']
 draft: false
 summary: 'A Vietnamese dev with an ML obsession builds an AI-powered chess analysis tool because apparently my 1750 rating needs more than just cà phê sữa đá to improve'
 layout: PostSimple
@@ -34,11 +35,11 @@ Like every other ML engineer trapped in the **1500-1800 ELO purgatory** (or as w
 
 ### 📊 Premium Chess Tool Comparison (aka Ways to Waste Good Coffee Money)
 
-| Service | Cost/Year | What You Get | What You're Actually Getting |
-|---------|-----------|--------------|-------------------|
-| Chess.com Basic | $49 | "Your move was bad" | Digital disappointment |
-| Chess.com Diamond | $149 | "Your move was REALLY bad" | Premium disappointment |
-| Private Coach | $3,900 | Actual insights | Someone to judge my moves like my mom judges my coding career |
+| Service           | Cost/Year | What You Get               | What You're Actually Getting                                  |
+| ----------------- | --------- | -------------------------- | ------------------------------------------------------------- |
+| Chess.com Basic   | $49       | "Your move was bad"        | Digital disappointment                                        |
+| Chess.com Diamond | $149      | "Your move was REALLY bad" | Premium disappointment                                        |
+| Private Coach     | $3,900    | Actual insights            | Someone to judge my moves like my mom judges my coding career |
 
 Chess.com Diamond: **$149/year**. For what? The computer tells me my knight move was bad but doesn't explain that I just hung it to a back-rank tactic I've missed literally **47 times this month**. Thanks, computer. Very insightful.
 
@@ -162,11 +163,11 @@ Build something that gives you insights like a **$75/hour coach** but costs like
 
 ### 💰 Cost Optimization (or "How I Learned to Stop Worrying and Love AWS Bills in VND")
 
-| Approach | Positions Analyzed | AI Cost | Result |
-|----------|-------------------|---------|---------|
-| **Naive** | 1,200 (100%) | $120.00 | 💸 Time to sell my gaming PC |
-| **Smart** | 90 (7.5%) | $9.00 | 🎯 Still afford phở |
-| **Savings** | 92.5% reduction | **91% less** | ✅ My AWS bill is now reasonable |
+| Approach    | Positions Analyzed | AI Cost      | Result                          |
+| ----------- | ------------------ | ------------ | ------------------------------- |
+| **Naive**   | 1,200 (100%)       | $120.00      | 💸 Time to sell my gaming PC     |
+| **Smart**   | 90 (7.5%)          | $9.00        | 🎯 Still afford phở              |
+| **Savings** | 92.5% reduction    | **91% less** | ✅ My AWS bill is now reasonable |
 
 ## 📚 What This Technical Series Is Actually About
 
