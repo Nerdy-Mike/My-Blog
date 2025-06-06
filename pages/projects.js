@@ -1,7 +1,7 @@
-import siteMetadata from '@/data/siteMetadata'
-import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
+import projectsData from '@/data/projectsData'
+import siteMetadata from '@/data/siteMetadata'
 
 export default function Projects() {
   return (
@@ -13,7 +13,8 @@ export default function Projects() {
             Projects
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Showcase your projects with a hero image (16 x 9)
+            Things I've built while consuming unhealthy amounts of Vietnamese coffee ☕ From AI
+            chess analysis to expression engines that don't make developers cry.
           </p>
         </div>
         <div className="container py-12">
@@ -25,6 +26,7 @@ export default function Projects() {
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
+                tags={d.tags}
               />
             ))}
           </div>

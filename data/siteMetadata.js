@@ -1,9 +1,10 @@
 const siteMetadata = {
-  title: `Michael Le's Blog`,
-  author: 'Michael Le',
+  title: `Nerdy Mike's Blog - AI, E-commerce & Tech Adventures from Ho Chi Minh City`,
+  author: 'Michael Le (Nerdy Mike)',
 
-  headerTitle: 'Michael Le',
-  description: 'A blog created with Next.js and Tailwind.css',
+  headerTitle: 'Nerdy Mike',
+  description:
+    'Remote software engineer in Ho Chi Minh City sharing adventures in AI, RAG systems, e-commerce optimization, and fintech. Where technical deep-dives meet Vietnamese coffee culture and way too much personality. ☕🤖',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://my-blog-nerdy-mike.vercel.app',

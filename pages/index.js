@@ -46,10 +46,41 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+
+      {/* Hero Section */}
       <div className="divide-y divide-gray-200 px-6 dark:divide-gray-700">
-        <div className="flex flex-row justify-between pb-1 ">
+        <div className="py-8 md:py-12">
+          <div className="mx-auto max-w-4xl text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-6xl">
+              Hey, I'm <span className="text-primary-500 dark:text-primary-400">Nerdy Mike</span>
+              <span className="text-2xl sm:text-4xl"> 👋</span>
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+              Remote software engineer crafting AI systems, RAG architectures, and e-commerce
+              solutions from Ho Chi Minh City 🇻🇳. Currently debugging why my chess AI thinks knights
+              move like Grab bikes while sipping my 4th cà phê sữa đá ☕
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <span className="inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-200">
+                🤖 AI & Machine Learning
+              </span>
+              <span className="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800 dark:bg-green-900 dark:text-green-200">
+                🛒 E-commerce Optimization
+              </span>
+              <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                🔍 RAG Systems
+              </span>
+              <span className="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-sm font-medium text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+                💰 Fintech
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Latest Posts Section */}
+        <div className="flex flex-row justify-between pb-1 pt-8">
           <p className="text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl">
-            All posts
+            Latest Adventures
           </p>
           <div className="pt-1 md:pr-2">
             <SearchPalette posts={posts} />
@@ -64,13 +95,13 @@ export default function Home({ posts }) {
               className="pr-4 text-lg text-gray-600 hover:text-gray-500 dark:text-gray-400"
               onClick={() => sortLatest(posts)}
             >
-              Lastest
+              Latest
             </button>
           </div>
         </div>
         <div className="grid grid-cols-1 pt-2 md:grid-cols-2">
           {!posts.length && 'No posts found.'}
-          {sortedPosts.map((frontMatter) => {
+          {sortedPosts.slice(0, 6).map((frontMatter) => {
             const { slug, date, title, summary, tags = [] } = frontMatter
             return (
               <div key={slug} className="">
@@ -115,6 +146,16 @@ export default function Home({ posts }) {
             )
           })}
         </div>
+        {posts.length > 6 && (
+          <div className="mt-8 text-center">
+            <Link
+              href="/blog"
+              className="rounded-md bg-primary-600 px-6 py-3 text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600"
+            >
+              View All Posts →
+            </Link>
+          </div>
+        )}
       </div>
     </>
   )

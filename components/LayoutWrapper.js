@@ -1,22 +1,19 @@
-import siteMetadata from '@/data/siteMetadata'
-import headerNavLinks from '@/data/headerNavLinks'
 import Logo from '@/data/logo.svg'
-import Link from './Link'
-import SectionContainer from './SectionContainer'
+import siteMetadata from '@/data/siteMetadata'
 import Footer from './Footer'
+import Link from './Link'
 import MobileNav from './MobileNav'
-import ThemeSwitch from './ThemeSwitch'
-import SearchBar from './SearchBar'
 import SideBarLeft from './SideBarLeft'
+import ThemeSwitch from './ThemeSwitch'
 
 const LayoutWrapper = ({ children }) => {
   return (
-    <div>
-      <header className="max-w-screen sticky top-0 z-50 mx-auto flex justify-center overflow-x-hidden py-2 px-6 backdrop-blur-lg backdrop-filter md:px-16">
-        <div className="flex w-full max-w-screen-2xl justify-between ">
+    <div className="flex min-h-screen flex-col">
+      <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg dark:border-gray-700 dark:bg-gray-900/80">
+        <div className="mx-auto flex max-w-screen-2xl justify-between px-4 py-4 md:px-8">
           <Link href="/" aria-label={siteMetadata.headerTitle}>
             <div className="flex items-center justify-between">
-              <div className="my-2 mr-3 -ml-3">
+              <div className="mr-3">
                 <Logo />
               </div>
             </div>
@@ -28,15 +25,22 @@ const LayoutWrapper = ({ children }) => {
           </div>
         </div>
       </header>
-      <SectionContainer>
-        <div className="flex h-full flex-col items-center justify-between  ">
-          <div className="grid max-w-screen-2xl grid-cols-10 px-2 md:px-16">
-            <SideBarLeft className="col-span-2 " />
-            <main className="col-span-10 mb-auto md:col-span-8">{children}</main>
+
+      <div className="mx-auto flex w-full max-w-screen-2xl flex-1">
+        {/* Sidebar - Fixed width, hidden on mobile */}
+        <aside className="hidden w-80 flex-shrink-0 border-r border-gray-200 bg-gray-50/50 dark:border-gray-700 dark:bg-gray-800/50 lg:block">
+          <div className="sticky top-24 h-[calc(100vh-6rem)] overflow-y-auto">
+            <SideBarLeft />
           </div>
-          <Footer />
-        </div>
-      </SectionContainer>
+        </aside>
+
+        {/* Main content area */}
+        <main className="flex-1 overflow-hidden">
+          <div className="px-4 py-8 md:px-8">{children}</div>
+        </main>
+      </div>
+
+      <Footer />
     </div>
   )
 }

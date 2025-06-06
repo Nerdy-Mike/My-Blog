@@ -1,11 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState, useRef, Fragment, useEffect } from 'react'
-import { Dialog, Combobox, Transition } from '@headlessui/react'
-import CloseButton from './buttons/CloseButton'
-import City from '@/data/city.jpg'
+import LoaderImage from '@/components/skeletonLoader/loaderImage'
+import { Dialog, Transition } from '@headlessui/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import LoaderImage from '@/components/skeletonLoader/loaderImage'
+import { Fragment, useEffect, useState } from 'react'
+import CloseButton from './buttons/CloseButton'
 
 const AboutMe = ({ CoverImage }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -61,14 +60,24 @@ const AboutMe = ({ CoverImage }) => {
                   <h2 className="text-3xl font-bold text-primary-600 dark:text-primary-400">
                     Michael Le
                   </h2>
-                  <p className=" text-gray-400 dark:text-gray-400">Junior Software Engineer</p>
+                  <p className=" text-gray-400 dark:text-gray-400">
+                    Remote Software Engineer & AI Enthusiast
+                  </p>
                 </div>
               </div>
               <div className="">
                 <div className="mb-4 px-7">
                   <p className="mt-2 text-center text-gray-600 dark:text-gray-300">
-                    Oh hey, I'm Michael, a junior software engineer based in Adelaide. This little
-                    corner is where I write about my experiences and thinkings.
+                    Hey there! 👋 I'm Michael, currently coding from Ho Chi Minh City, Vietnam 🇻🇳
+                    while consuming unhealthy amounts of cà phê sữa đá. Remote work life means my
+                    biggest commute is from bed to coffee machine, and honestly, that's working out
+                    pretty well.
+                    <br />
+                    <br />I build AI systems that (hopefully) don't hallucinate more than I do after
+                    my 4th coffee, architect RAG systems, optimize e-commerce platforms, and dive
+                    into fintech without losing my own money. When I'm not explaining to AI why
+                    chess knights don't move like Grab bikes, you'll find me here writing about tech
+                    with way too much personality. ☕🤖
                   </p>
 
                   <div className="mt-2 flex flex-col flex-wrap justify-center gap-2 sm:gap-4">
