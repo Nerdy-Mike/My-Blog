@@ -150,16 +150,6 @@ export default function Home({ posts }) {
             )
           })}
         </div>
-        {posts.length > 6 && (
-          <div className="mt-8 text-center">
-            <Link
-              href="/blog"
-              className="rounded-md bg-primary-600 px-6 py-3 text-white hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600"
-            >
-              View All Posts →
-            </Link>
-          </div>
-        )}
       </div>
     </>
   )
