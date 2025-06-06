@@ -6,8 +6,20 @@ const PageTransition = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false)
   const [progress, setProgress] = useState(0)
   const [isVisible, setIsVisible] = useState(true)
+  const [mounted, setMounted] = useState(false)
+
+  // Handle hydration
+  useEffect(() => {
+    setMounted(true)
+    // Ensure content is visible on initial mount
+    setIsVisible(true)
+    setIsLoading(false)
+    setProgress(0)
+  }, [])
 
   useEffect(() => {
+    if (!mounted) return // Don't set up event listeners until mounted
+
     let progressInterval
     let progressTimeout
 
@@ -39,7 +51,7 @@ const PageTransition = ({ children }) => {
         setIsLoading(false)
         setProgress(0)
         setIsVisible(true)
-      }, 150) // Reduced timeout for faster response
+      }, 150)
     }
 
     const handleError = (err, url) => {
@@ -56,9 +68,6 @@ const PageTransition = ({ children }) => {
       setIsVisible(true)
     }
 
-    // Ensure content is visible on initial load
-    setIsVisible(true)
-
     router.events.on('routeChangeStart', handleStart)
     router.events.on('routeChangeComplete', handleComplete)
     router.events.on('routeChangeError', handleError)
@@ -70,31 +79,26 @@ const PageTransition = ({ children }) => {
       if (progressInterval) clearInterval(progressInterval)
       if (progressTimeout) clearTimeout(progressTimeout)
     }
-  }, [router])
+  }, [router, mounted])
 
-  // Fallback effect to ensure content is visible if no navigation is happening
+  // Safety net to prevent stuck invisible state
   useEffect(() => {
-    if (!isLoading && !isVisible) {
-      const fallbackTimeout = setTimeout(() => {
-        console.warn('PageTransition: Forcing visibility due to stuck state')
-        setIsVisible(true)
-      }, 1000) // Increased timeout but added warning
+    if (!mounted) return
 
-      return () => clearTimeout(fallbackTimeout)
-    }
-  }, [isLoading, isVisible])
-
-  // Additional safety check to prevent permanent blank state
-  useEffect(() => {
-    const safetyCheck = setTimeout(() => {
+    const safetyTimeout = setTimeout(() => {
       if (!isVisible && !isLoading) {
-        console.warn('PageTransition: Safety check triggered, making content visible')
+        console.warn('PageTransition: Safety check - forcing visibility')
         setIsVisible(true)
       }
-    }, 2000)
+    }, 3000) // Longer timeout for safety net
 
-    return () => clearTimeout(safetyCheck)
-  }, [router.asPath]) // Trigger on route changes
+    return () => clearTimeout(safetyTimeout)
+  }, [isVisible, isLoading, mounted])
+
+  // Don't render anything until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return <div>{children}</div>
+  }
 
   return (
     <>
@@ -112,7 +116,7 @@ const PageTransition = ({ children }) => {
           isVisible ? 'opacity-100' : 'opacity-0'
         }`}
         style={{
-          // Fallback style to ensure content is never completely hidden
+          // Ensure content is never completely hidden
           minHeight: isVisible ? 'auto' : '1px',
         }}
       >
