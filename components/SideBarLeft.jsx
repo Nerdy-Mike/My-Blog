@@ -2,8 +2,9 @@
 import City from '@/data/city.jpg'
 import Image from 'next/image'
 import AboutMe from './AboutMe'
+import PopularPosts from './PopularPosts'
 
-const SideBarLeft = () => {
+const SideBarLeft = ({ posts = [] }) => {
   return (
     <div className="p-6">
       {/* Short Bio */}
@@ -26,6 +27,9 @@ const SideBarLeft = () => {
           </div>
         </div>
       </div>
+
+      {/* Popular Posts */}
+      {posts.length > 0 && <PopularPosts posts={posts} limit={3} />}
 
       <nav>
         <div className="mb-4 text-primary-500 dark:text-primary-400">Categories</div>

@@ -6,7 +6,7 @@ import MobileNav from './MobileNav'
 import SideBarLeft from './SideBarLeft'
 import ThemeSwitch from './ThemeSwitch'
 
-const LayoutWrapper = ({ children }) => {
+const LayoutWrapper = ({ children, posts = [] }) => {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg dark:border-gray-700 dark:bg-gray-900/80">
@@ -30,7 +30,7 @@ const LayoutWrapper = ({ children }) => {
         {/* Sidebar - Fixed width, hidden on mobile */}
         <aside className="hidden w-80 flex-shrink-0 border-r border-gray-200 bg-gray-50/50 dark:border-gray-700 dark:bg-gray-800/50 lg:block">
           <div className="sticky top-24 h-[calc(100vh-6rem)] overflow-y-auto">
-            <SideBarLeft />
+            <SideBarLeft posts={posts} />
           </div>
         </aside>
 

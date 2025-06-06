@@ -1,4 +1,5 @@
 import Link from '@/components/Link'
+import ReadingTime from '@/components/ReadingTime'
 import SearchPalette from '@/components/SearchPalette'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
@@ -110,7 +111,10 @@ export default function Home({ posts }) {
                     <dl>
                       <dt className="sr-only">Published on</dt>
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date)}</time>
+                        <div className="flex items-center justify-between">
+                          <time dateTime={date}>{formatDate(date)}</time>
+                          <ReadingTime content={summary} />
+                        </div>
                       </dd>
                     </dl>
                     <div className="space-y-4 xl:col-span-3">

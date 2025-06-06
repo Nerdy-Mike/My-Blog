@@ -1,16 +1,25 @@
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
+import ReadingProgressBar from '@/components/ReadingProgressBar'
+import ReadingTime from '@/components/ReadingTime'
+import ScrollTopAndComment from '@/components/ScrollTop'
 import SectionContainer from '@/components/SectionContainer'
 import { BlogSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
-import ScrollTopAndComment from '@/components/ScrollTop'
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
-  const { date, title } = frontMatter
+  const { slug, date, title, summary } = frontMatter
 
   return (
     <SectionContainer>
+      <BlogSEO
+        url={`${siteMetadata.siteUrl}/blog/${slug}`}
+        authorDetails={authorDetails}
+        {...frontMatter}
+      />
+      <ReadingProgressBar />
+      <ScrollTopAndComment />
       <article>
         <div>
           <header>
@@ -26,6 +35,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               <div>
                 <PageTitle>{title}</PageTitle>
               </div>
+              <div className="flex items-center justify-center space-x-4 text-sm">
+                <ReadingTime content={children?.props?.children || summary} />
+              </div>
             </div>
           </header>
           <div
@@ -35,7 +47,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>
-            {/* <footer>
+            <footer>
               <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
                 {prev && (
                   <div className="pt-4 xl:pt-8">
@@ -58,7 +70,15 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   </div>
                 )}
               </div>
-            </footer> */}
+              <div className="pt-4 xl:pt-8">
+                <Link
+                  href="/blog"
+                  className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                >
+                  &larr; Back to the blog
+                </Link>
+              </div>
+            </footer>
           </div>
         </div>
       </article>
