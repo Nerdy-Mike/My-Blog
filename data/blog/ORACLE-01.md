@@ -1,3 +1,14 @@
+---
+title: 'The Chronicles of ORACLE'
+date: '2024-12-19'
+category: 'Technology'
+tags: ['AI', 'productivity', 'knowledge-management', 'digital-assistant', 'story']
+draft: false
+summary: 'A digital fairy tale about ORACLE, an AI assistant designed to transform information overwhelm into effortless mastery for multi-project developers.'
+authors: ['default']
+layout: PostSimple
+---
+
 # **The Chronicles of ORACLE**
 *A Digital Fairy Tale*
 
