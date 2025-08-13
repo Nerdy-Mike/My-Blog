@@ -94,7 +94,7 @@ Where:
 - **UI/Layout Tasks**: 85-95% first-pass success rate
 - **Data Processing**: 60-75% success with refinement
 - **Business Logic**: 20-40% usable without major revision
-- **System Integration**: <20% production-ready output
+ - **System Integration**: &lt;20% production-ready output
 
 **Statistical Significance:**
 - Sample size: N > 1000 engineering tasks across teams
