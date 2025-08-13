@@ -1,6 +1,6 @@
 ---
 title: "The Chess Mind Project: Building Better Chess Analysis Tools"
-date: '2024-03-26'
+date: '2025-04-26'
 category: 'Projects'
 tags: ['ai-ml', 'chess-analysis', 'python', 'case-study', 'intermediate']
 draft: false
