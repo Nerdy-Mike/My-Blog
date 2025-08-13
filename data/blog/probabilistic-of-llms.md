@@ -6,6 +6,8 @@ category: 'AI'
 tags: ['llm', 'ai', 'theory', 'software-engineering']
 draft: false
 summary: 'A framework explaining why LLM performance degrades with task complexity, grounded in information theory, cognitive science, and software engineering; includes metrics and practices for context engineering and human-AI collaboration.'
+authors: ['default']
+layout: PostLayout
 ---
 
 # The Probabilistic Nature of Large Language Models: 
