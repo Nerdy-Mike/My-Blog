@@ -1,6 +1,6 @@
 ---
 title: 'Reverse Engineering Better Auth: Building a Password Compatibility Layer'
-date: '2025-01-15'
+date: '2025-12-14'
 category: 'Technical'
 tags: ['authentication', 'migration', 'security', 'open-source', 'typescript']
 draft: false
